@@ -1,0 +1,57 @@
+<p>provider works!</p>
+
+<div>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="select-container">
+      <label for="providerList">Providers:&nbsp;</label>
+      <select
+        class="select-box"
+        id="providerList"
+        formControlName="selectedProvider">
+
+        <option *ngFor="let provider of providers$ | async" [ngValue]="provider">
+          {{ provider.name }}
+        </option>
+
+      </select>
+      <div class="icon-container">
+        <i class="fa-solid fa-caret-down"></i>
+      </div>
+    </div>
+    <br/>
+    <br/>
+
+    <div formGroupName="editProvider">
+
+      <label for="name">Name: </label>
+      <input
+        id="name"
+        type="text"
+        formControlName="name"/><br/>
+      <br/>
+
+      <label for="logoFileName">Logo File Name: </label>
+      <input
+        id="logoFileName"
+        type="text"
+        formControlName="logoFileName"/><br/>
+      <br/>
+
+      <label for="pinImageFileName">Pin Image File Name: </label>
+      <input
+        id="pinImageFileName"
+        type="text"
+        formControlName="pinImageFileName"/><br/>
+      <br/>
+    </div>
+
+    <input
+      type="submit"
+      value="submit"/>
+
+  </form>
+</div>
+<pre
+>{{ formGroupJson }}
+</pre>
