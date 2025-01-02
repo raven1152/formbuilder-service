@@ -1,0 +1,33 @@
+<div class="container">
+
+  <h1>Formbuilder Service Singleton Example</h1>
+  <p>
+    This project demonstrates the use of an injectable service as a
+    way to provide a reactive form across multiple components.
+    Additionally, providing this form as a singleton allows for the
+    form's state to persist in the application, without writing code
+    to perform any type of state management functionality.
+  </p>
+  <p>
+    The propagation of state across components and pages can be
+    demonstrated by modifying the Name, Logo File, or Pin Image File
+    fields and navigating to Provider 2 page.  You will observe that
+    changes made on one page are reflected in the other page.  This
+    is due to the fact that the same formbuilder service instance
+    is provided to both pages.
+  </p>
+  <p>
+    This project also demonstrates the use of font-awesome, and a
+    method of styling the built-in html select list to make it more
+    visually appealing.
+  </p>
+
+  <a routerLink="/provider">Provider</a><br/><br/>
+  <a routerLink="/provider2">Provider 2</a><br/><br/>
+
+  <i class="fa fa-user"></i> User Icon <br><br>
+  <i class="fa fa-envelope"></i> Envelope Icon<br><br>
+
+  <router-outlet></router-outlet>
+
+</div>

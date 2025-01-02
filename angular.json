@@ -27,15 +27,17 @@
           },
           "options": {
             "assets": [
-              "src/css/font-awesome.min.css",
-              "src/fonts/*"
             ],
             "index": "src/index.html",
             "browser": "src/main.ts",
             "outputPath": "dist/demo",
             "polyfills": ["zone.js"],
             "scripts": [],
-            "styles": ["src/global_styles.scss"],
+            "styles": [
+              "node_modules/font-awesome/css/font-awesome.min.css",
+              "src/global_styles.scss",
+              "src/reset.css"
+            ],
             "tsConfig": "tsconfig.app.json"
           }
         },
@@ -43,7 +45,8 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "development": {
-              "buildTarget": "demo:build:development"
+              "buildTarget": "demo:build:development",
+              "port": 4400
             },
             "production": {
               "buildTarget": "demo:build:production"
